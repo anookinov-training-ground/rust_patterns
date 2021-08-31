@@ -1,4 +1,10 @@
 fn main() {
+    // match VALUE {
+    //     PATTERN => EXPRESSION,
+    //     PATTERN => EXPRESSION,
+    //     PATTERN => EXPRESSION,
+    // }    
+
     let favorite_color: Option<&str> = None;
     let is_tuesday = false;
     let age: Result<u8, _> = "34".parse();
@@ -32,4 +38,12 @@ fn main() {
     for (index, value) in v.iter().enumerate() {
         println!("{} is at index {}", value, index);
     }
+
+    let x = 5; // let PATTERN = EXPRESSION;
+    println!("{}", x);
+
+    let (x, y, z) = (1, 2, 3);
+    println!("{}, {}, {}", x, y, z);
+
+    // let (x, y) = (1, 2, 3); // compiler error - use _ or .. to ignore 
 }
