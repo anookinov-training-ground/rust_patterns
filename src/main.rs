@@ -49,6 +49,18 @@ fn main() {
 
     let point = (3, 5);
     print_coordinates(&point);
+
+    // let Some(x) = some_option_value; // compiler error from attempt to use a refutable pattern with let
+
+    // fix refutable pattern where an irrefutable pattern is needed with if let instead of let
+    // if let Some(x) = some_option_value {
+    //     println!("{}", x);
+    // }
+
+    // warning because it doesn't make sense to use if let with an irrefutable pattern
+    // if let x = 5 {
+    //     println!("{}", x);
+    // }
 }
 
 fn foo(x: i32) {
