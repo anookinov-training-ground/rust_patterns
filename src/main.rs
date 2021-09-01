@@ -116,6 +116,16 @@ fn main() {
     let Point { x: a, y: b } = p;
     assert_eq!(0, a);
     assert_eq!(7, b);
+
+    let Point { x, y } = p; // let Point { x: x, y: y } = p;
+    assert_eq!(0, x);
+    assert_eq!(7, y);
+
+    match p {
+        Point { x, y: 0 } => println!("On the x axis at {}", x),
+        Point { x: 0, y } => println!("On the y axis at {}", y),
+        Point { x, y } => println!("On neither axis: ({}, {})", x, y),
+    }
 }
 
 fn foo(x: i32) {
