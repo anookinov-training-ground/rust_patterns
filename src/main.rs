@@ -208,6 +208,25 @@ fn main() {
             println!("Some numbers: {}, {}, {}", first, third, fifth)
         }
     }
+
+    let _x = 5;
+    let y = 10;
+
+    // let s = Some(String::from("Hello!"));
+
+    // if let Some(_s) = s {
+    //     println!("found a string");
+    // }
+
+    // println!("{:?}", s); // error as s is moved to _s
+
+    let s = Some(String::from("Hello!"));
+
+    if let Some(_) = s {
+        println!("found a string");
+    }
+
+    println!("{:?}", s); // no error as s is not moved to _
 }
 
 fn foo(x: i32) {
