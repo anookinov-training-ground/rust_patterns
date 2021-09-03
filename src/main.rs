@@ -227,6 +227,32 @@ fn main() {
     }
 
     println!("{:?}", s); // no error as s is not moved to _
+
+    struct Point_3d {
+        x: i32,
+        y: i32,
+        z: i32,
+    }
+
+    let origin = Point_3d { x: 0, y: 0, z: 0 };
+
+    match origin {
+        Point_3d { x, .. } => println!("x is {}", x),
+    }
+
+    let numbers = (2, 4, 8, 16, 32);
+
+    match numbers {
+        (first, .., last) => {
+            println!("Some numbers: {}, {}", first, last);
+        }
+    }
+
+    // match numbers {
+    //     (.., second, ..) => { // can't uses as Rust can't determine with value to match
+    //         println!("Some numbers: {}", second)
+    //     },
+    // }
 }
 
 fn foo(x: i32) {
